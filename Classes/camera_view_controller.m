@@ -7,6 +7,10 @@
 
 @implementation camera_view_controller
 
+- (NSData*) glitch:(NSData*)d {
+    return d;
+}
+
 - (IBAction)launch_camera:(id)sender {
     UIImagePickerController*ip = [[UIImagePickerController alloc] init];
     [ip setSourceType:UIImagePickerControllerSourceTypeCamera];
@@ -21,7 +25,11 @@
                   editingInfo:(NSDictionary*)editingInfo {
     [self dismissModalViewControllerAnimated:YES];
     
-    UIImage*img = [editingInfo objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage*img = [UIImage imageWithData:
+                   [self glitch:
+                    UIImageJPEGRepresentation([editingInfo objectForKey:UIImagePickerControllerOriginalImage], 
+                                              1.0)]
+                   ];
     CGSize  size = { 300, 400 };
     UIGraphicsBeginImageContext(size);
     CGRect rect;
@@ -32,7 +40,6 @@
     UIGraphicsEndImageContext();
 }
     
-
 - (void)imagePickerControllerDidCancel:(UIImagePickerController*)picker {
     [self dismissModalViewControllerAnimated:YES];
 }

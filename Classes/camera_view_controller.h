@@ -3,9 +3,6 @@
 //  glitch_camera
 //
 
-#import <UIKit/UIKit.h>
-#import <CoreGraphics/CoreGraphics.h>
-
 @interface camera_view_controller : UIViewController
 <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     IBOutlet UIImageView*   _imageView;
