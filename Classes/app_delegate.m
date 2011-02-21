@@ -8,12 +8,12 @@
 @implementation app_delegate
 @synthesize w, navigationController;
 
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {    
-    [self.w addSubview:navigationController.view];
-    [self.w makeKeyAndVisible];
+- (BOOL)application:(UIApplication*)application 
+didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {    
+    [w addSubview:navigationController.view];
+    [w makeKeyAndVisible];
     return YES;
 }
-
 
 - (void)dealloc {
 	[navigationController release];

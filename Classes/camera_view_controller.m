@@ -7,49 +7,34 @@
 
 @implementation camera_view_controller
 
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
+- (IBAction)launch_camera:(id)sender {
+    UIImagePickerController*ip = [[UIImagePickerController alloc] init];
+    [ip setSourceType:UIImagePickerControllerSourceTypeCamera];
+    [ip setAllowsEditing:YES];
+    [ip setDelegate:self];
+    [self presentModalViewController:ip animated:YES];
+    [ip release];
 }
-*/
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-*/
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
+- (void)imagePickerController:(UIImagePickerController*)picker 
+        didFinishPickingImage:(UIImage*)image 
+                  editingInfo:(NSDictionary*)editingInfo {
+    [self dismissModalViewControllerAnimated:YES];
     
-    // Release any cached data, images, etc. that aren't in use.
+    UIImage*img = [editingInfo objectForKey:UIImagePickerControllerOriginalImage];
+    CGSize  size = { 300, 400 };
+    UIGraphicsBeginImageContext(size);
+    CGRect rect;
+    rect.origin = CGPointZero;
+    rect.size = size;
+    [img drawInRect:rect];
+    _imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
 }
+    
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+- (void)imagePickerControllerDidCancel:(UIImagePickerController*)picker {
+    [self dismissModalViewControllerAnimated:YES];
 }
-
-
-- (void)dealloc {
-    [super dealloc];
-}
-
 
 @end
