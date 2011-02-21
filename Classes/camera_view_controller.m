@@ -7,8 +7,12 @@
 
 @implementation camera_view_controller
 
-- (NSData*) glitch:(NSData*)d {
-    return d;
+- (NSData*)glitch:(NSData*)d withRatio:(float)rat {
+    Byte*b = (Byte*)malloc([d length]); 
+    memcpy(b, [d bytes], [d length]); 
+    for (int i = 0; i < [d length]*rat; ++i)
+        b[arc4random()%[d length]] = (Byte)arc4random()%BYTE_SIZE;
+    return [NSData dataWithBytes:b length:[d length]];
 }
 
 - (IBAction)launch_camera:(id)sender {
@@ -27,8 +31,9 @@
     
     UIImage*img = [UIImage imageWithData:
                    [self glitch:
-                    UIImageJPEGRepresentation([editingInfo objectForKey:UIImagePickerControllerOriginalImage], 
-                                              1.0)]
+                    UIImageJPEGRepresentation([editingInfo objectForKey:UIImagePickerControllerOriginalImage],
+                                              1.0)
+                      withRatio:0.00003]
                    ];
     CGSize  size = { 300, 400 };
     UIGraphicsBeginImageContext(size);
