@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1"/>
+			<integer value="9"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -71,7 +71,7 @@
 							</object>
 						</object>
 					</object>
-					<object class="IBUILabel" id="322643246">
+					<object class="IBUILabel" id="23246957">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 304}, {307, 57}}</string>
@@ -94,25 +94,26 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MCAwIDAAA</bytes>
 						</object>
-						<object class="NSColor" key="IBUIHighlightedColor" id="490518816">
+						<object class="NSColor" key="IBUIHighlightedColor" id="435804267">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
 					</object>
-					<object class="IBUIImageView" id="72440102">
+					<object class="IBUIImageView" id="816944442">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
 						<string key="NSFrameSize">{320, 416}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
 				<reference key="NSSuperview"/>
-				<reference key="IBUIBackgroundColor" ref="490518816"/>
+				<reference key="IBUIBackgroundColor" ref="435804267"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
@@ -132,7 +133,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">_imageView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="72440102"/>
+						<reference key="destination" ref="816944442"/>
 					</object>
 					<int key="connectionID">10</int>
 				</object>
@@ -160,8 +161,8 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="667097086"/>
-							<reference ref="322643246"/>
-							<reference ref="72440102"/>
+							<reference ref="23246957"/>
+							<reference ref="816944442"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -204,12 +205,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">12</int>
-						<reference key="object" ref="322643246"/>
+						<reference key="object" ref="23246957"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">9</int>
-						<reference key="object" ref="72440102"/>
+						<reference key="object" ref="816944442"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>

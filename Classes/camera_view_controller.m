@@ -28,14 +28,12 @@
         didFinishPickingImage:(UIImage*)image 
                   editingInfo:(NSDictionary*)editingInfo {
     [self dismissModalViewControllerAnimated:YES];
-    
     UIImage*img = [UIImage imageWithData:
                    [self glitch:
                     UIImageJPEGRepresentation([editingInfo objectForKey:UIImagePickerControllerOriginalImage],
                                               1.0)
                       withRatio:0.00003]
                    ];
-    [_imageView setContentMode:UIViewContentModeScaleAspectFill];
     [_imageView setImage:img];
 }
     
