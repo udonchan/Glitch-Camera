@@ -18,11 +18,11 @@
 			<key>Key</key>
 			<string>glitch ratio</string>
 			<key>DefaultValue</key>
-			<real>0.2</real>
+			<real>0.3</real>
 			<key>MinimumValue</key>
 			<integer>0</integer>
 			<key>MaximumValue</key>
-			<real>0.5</real>
+			<real>2</real>
 			<key>MinimumValueImage</key>
 			<string></string>
 			<key>MaximumValueImage</key>

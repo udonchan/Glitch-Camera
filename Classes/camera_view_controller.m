@@ -11,7 +11,7 @@
     Byte*b = (Byte*)malloc([d length]); 
     memcpy(b, [d bytes], [d length]); 
     for (int i = 0; i < [d length]*rat; ++i)
-        b[arc4random()%[d length]] = (Byte)arc4random()%BYTE_SIZE;
+        b[lrand48()%[d length]] = (Byte)lrand48()%BYTE_SIZE;
     return [NSData dataWithBytes:b length:[d length]];
 }
 
