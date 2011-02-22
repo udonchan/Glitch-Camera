@@ -6,6 +6,38 @@
 #import "camera_view_controller.h"
 
 @implementation camera_view_controller
+@synthesize toolbar;
+
+- (void) visible_bars {
+    [[UIApplication sharedApplication]setStatusBarHidden:NO];
+    [self.toolbar setAlpha:1.0];
+    _current_bars_visibility = YES;
+}
+
+- (void) hide_bars {
+    [[UIApplication sharedApplication]setStatusBarHidden:YES];
+    [self.toolbar setAlpha:0.0];
+    _current_bars_visibility = NO;
+}
+
+- (void)change_bars_visibility {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.7];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(void)];
+    if (_current_bars_visibility)
+        [self hide_bars];
+    else
+        [self visible_bars];
+    [UIView commitAnimations];
+}
+
+- (void) touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event {
+    CGPoint location = [[touches anyObject] locationInView:self.view];
+    CALayer *hitLayer = [[self.view layer] hitTest:[self.view convertPoint:location fromView:nil]];
+    if (hitLayer == _imageView.layer && _imageView.image!=nil)
+        [self change_bars_visibility];
+}
 
 - (NSData*)glitch:(NSData*)d withRatio:(float)rat {
     Byte*b = (Byte*)malloc([d length]); 
@@ -38,6 +70,11 @@
     
 - (void)imagePickerControllerDidCancel:(UIImagePickerController*)picker {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    _current_bars_visibility = YES;
+    [super viewWillAppear:animated];
 }
 
 @end
