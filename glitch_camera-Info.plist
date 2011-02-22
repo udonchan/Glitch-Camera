@@ -26,5 +26,7 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>main</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 </dict>
 </plist>
