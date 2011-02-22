@@ -74,6 +74,19 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     _current_bars_visibility = YES;
+    /*
+    [_logoView setAnimationImages:
+     [NSArray arrayWithObjects:
+      [UIImage imageNamed:@"1.png"],
+      [UIImage imageNamed:@"2.png"],
+      [UIImage imageNamed:@"3.png"],
+      [UIImage imageNamed:@"4.png"],
+      nil]];
+    [_logoView setAnimationDuration:0.4];
+    [_logoView startAnimating];
+     */
+    [_logoView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.png",arc4random()%4+1]]];
+
     [super viewWillAppear:animated];
 }
 

@@ -15,6 +15,10 @@
 		28AD73600D9D9599002E5188 /* main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* main.xib */; };
 		8C53A15313138652003E27AC /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8C53A15213138652003E27AC /* Settings.bundle */; };
 		8C53A1C71313B34A003E27AC /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C53A1C61313B34A003E27AC /* icon.png */; };
+		8C53A1E41313B891003E27AC /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C53A1E01313B891003E27AC /* 1.png */; };
+		8C53A1E51313B891003E27AC /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C53A1E11313B891003E27AC /* 2.png */; };
+		8C53A1E61313B891003E27AC /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C53A1E21313B891003E27AC /* 3.png */; };
+		8C53A1E71313B891003E27AC /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C53A1E31313B891003E27AC /* 4.png */; };
 		8C970CD213128F40007E01A5 /* camera_view_controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C970CD013128F40007E01A5 /* camera_view_controller.m */; };
 		8C970CD313128F40007E01A5 /* camera_view_controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C970CD113128F40007E01A5 /* camera_view_controller.xib */; };
 /* End PBXBuildFile section */
@@ -31,6 +35,10 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C53A15213138652003E27AC /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		8C53A1C61313B34A003E27AC /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		8C53A1E01313B891003E27AC /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		8C53A1E11313B891003E27AC /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		8C53A1E21313B891003E27AC /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		8C53A1E31313B891003E27AC /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		8C970CCF13128F40007E01A5 /* camera_view_controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera_view_controller.h; sourceTree = "<group>"; };
 		8C970CD013128F40007E01A5 /* camera_view_controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = camera_view_controller.m; sourceTree = "<group>"; };
 		8C970CD113128F40007E01A5 /* camera_view_controller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = camera_view_controller.xib; path = Classes/camera_view_controller.xib; sourceTree = "<group>"; };
@@ -94,6 +102,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8C53A1DF1313B891003E27AC /* logo */,
 				8C53A1C61313B34A003E27AC /* icon.png */,
 				28AD735F0D9D9599002E5188 /* main.xib */,
 				8C970CD113128F40007E01A5 /* camera_view_controller.xib */,
@@ -111,6 +120,17 @@
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C53A1DF1313B891003E27AC /* logo */ = {
+			isa = PBXGroup;
+			children = (
+				8C53A1E01313B891003E27AC /* 1.png */,
+				8C53A1E11313B891003E27AC /* 2.png */,
+				8C53A1E21313B891003E27AC /* 3.png */,
+				8C53A1E31313B891003E27AC /* 4.png */,
+			);
+			path = logo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +187,10 @@
 				8C970CD313128F40007E01A5 /* camera_view_controller.xib in Resources */,
 				8C53A15313138652003E27AC /* Settings.bundle in Resources */,
 				8C53A1C71313B34A003E27AC /* icon.png in Resources */,
+				8C53A1E41313B891003E27AC /* 1.png in Resources */,
+				8C53A1E51313B891003E27AC /* 2.png in Resources */,
+				8C53A1E61313B891003E27AC /* 3.png in Resources */,
+				8C53A1E71313B891003E27AC /* 4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

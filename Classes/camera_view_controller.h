@@ -9,6 +9,7 @@
 <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     BOOL _current_bars_visibility;
     IBOutlet UIImageView*   _imageView;
+    IBOutlet UIImageView*   _logoView;
 }
 
 @property (nonatomic, retain) IBOutlet UIToolbar*toolbar;
