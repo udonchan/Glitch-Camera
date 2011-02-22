@@ -28,13 +28,12 @@
         didFinishPickingImage:(UIImage*)image 
                   editingInfo:(NSDictionary*)editingInfo {
     [self dismissModalViewControllerAnimated:YES];
-    UIImage*img = [UIImage imageWithData:
-                   [self glitch:
-                    UIImageJPEGRepresentation([editingInfo objectForKey:UIImagePickerControllerOriginalImage],
-                                              1.0)
-                      withRatio:0.00003]
-                   ];
-    [_imageView setImage:img];
+    [_imageView setImage:
+     [UIImage imageWithData:
+      [self glitch:
+       UIImageJPEGRepresentation([editingInfo objectForKey:UIImagePickerControllerOriginalImage],
+                                 [[[NSUserDefaults standardUserDefaults]stringForKey:@"jpeg quality"]floatValue])
+         withRatio:0.0001*[[[NSUserDefaults standardUserDefaults]stringForKey:@"glitch ratio"]floatValue]]]];
 }
     
 - (void)imagePickerControllerDidCancel:(UIImagePickerController*)picker {
