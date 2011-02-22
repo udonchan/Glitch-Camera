@@ -35,14 +35,8 @@
                                               1.0)
                       withRatio:0.00003]
                    ];
-    CGSize  size = { 300, 400 };
-    UIGraphicsBeginImageContext(size);
-    CGRect rect;
-    rect.origin = CGPointZero;
-    rect.size = size;
-    [img drawInRect:rect];
-    _imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    [_imageView setContentMode:UIViewContentModeScaleAspectFill];
+    [_imageView setImage:img];
 }
     
 - (void)imagePickerControllerDidCancel:(UIImagePickerController*)picker {
