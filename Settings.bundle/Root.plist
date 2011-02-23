@@ -22,7 +22,7 @@
 			<key>MinimumValue</key>
 			<integer>0</integer>
 			<key>MaximumValue</key>
-			<real>2</real>
+			<integer>10</integer>
 			<key>MinimumValueImage</key>
 			<string></string>
 			<key>MaximumValueImage</key>
@@ -49,6 +49,32 @@
 			<string></string>
 			<key>MaximumValueImage</key>
 			<string></string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Key</key>
+			<string>glitch type</string>
+			<key>Title</key>
+			<string>Glitch Type</string>
+			<key>DefaultValue</key>
+			<string>0</string>
+			<key>Values</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>Simple Glith</string>
+				<string>Segmentation Glitch</string>
+			</array>
 		</dict>
 	</array>
 </dict>

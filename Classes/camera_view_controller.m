@@ -39,14 +39,6 @@
         [self change_bars_visibility];
 }
 
-- (NSData*)glitch:(NSData*)d withRatio:(float)rat {
-    Byte*b = (Byte*)malloc([d length]); 
-    memcpy(b, [d bytes], [d length]); 
-    for (int i = 0; i < [d length]*rat; ++i)
-        b[lrand48()%[d length]] = (Byte)lrand48()%BYTE_SIZE;
-    return [NSData dataWithBytes:b length:[d length]];
-}
-
 - (IBAction)launch_camera:(id)sender {
     UIImagePickerController*ip = [[UIImagePickerController alloc] init];
     [ip setSourceType:UIImagePickerControllerSourceTypeCamera];
@@ -54,6 +46,17 @@
     [ip setDelegate:self];
     [self presentModalViewController:ip animated:YES];
     [ip release];
+}
+
+-(NSData*)glitch:(NSData*)d {
+    switch ([[[NSUserDefaults standardUserDefaults]stringForKey:@"glitch type"]intValue]) {
+        case 1:
+            return [glitch segment_glitch:d 
+                                withRatio:0.0001*[[[NSUserDefaults standardUserDefaults]stringForKey:@"glitch ratio"]floatValue]];
+        default:
+            return [glitch simple_glitch:d 
+                               withRatio:0.0001*[[[NSUserDefaults standardUserDefaults]stringForKey:@"glitch ratio"]floatValue]];
+    }
 }
 
 - (void)imagePickerController:(UIImagePickerController*)picker 
@@ -64,8 +67,7 @@
      [UIImage imageWithData:
       [self glitch:
        UIImageJPEGRepresentation([editingInfo objectForKey:UIImagePickerControllerOriginalImage],
-                                 [[[NSUserDefaults standardUserDefaults]stringForKey:@"jpeg quality"]floatValue])
-         withRatio:0.0001*[[[NSUserDefaults standardUserDefaults]stringForKey:@"glitch ratio"]floatValue]]]];
+                                 [[[NSUserDefaults standardUserDefaults]stringForKey:@"jpeg quality"]floatValue])]]];
 }
     
 - (void)imagePickerControllerDidCancel:(UIImagePickerController*)picker {

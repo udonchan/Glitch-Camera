@@ -19,6 +19,7 @@
 		8C53A1E51313B891003E27AC /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C53A1E11313B891003E27AC /* 2.png */; };
 		8C53A1E61313B891003E27AC /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C53A1E21313B891003E27AC /* 3.png */; };
 		8C53A1E71313B891003E27AC /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C53A1E31313B891003E27AC /* 4.png */; };
+		8C53A22D131433C8003E27AC /* glitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C53A22C131433C8003E27AC /* glitch.m */; };
 		8C970CD213128F40007E01A5 /* camera_view_controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C970CD013128F40007E01A5 /* camera_view_controller.m */; };
 		8C970CD313128F40007E01A5 /* camera_view_controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C970CD113128F40007E01A5 /* camera_view_controller.xib */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,8 @@
 		8C53A1E11313B891003E27AC /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		8C53A1E21313B891003E27AC /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		8C53A1E31313B891003E27AC /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		8C53A22B131433C8003E27AC /* glitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glitch.h; sourceTree = "<group>"; };
+		8C53A22C131433C8003E27AC /* glitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = glitch.m; sourceTree = "<group>"; };
 		8C970CCF13128F40007E01A5 /* camera_view_controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera_view_controller.h; sourceTree = "<group>"; };
 		8C970CD013128F40007E01A5 /* camera_view_controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = camera_view_controller.m; sourceTree = "<group>"; };
 		8C970CD113128F40007E01A5 /* camera_view_controller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = camera_view_controller.xib; path = Classes/camera_view_controller.xib; sourceTree = "<group>"; };
@@ -62,10 +65,9 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1D3623240D0F684500981E51 /* app_delegate.h */,
-				1D3623250D0F684500981E51 /* app_delegate.m */,
-				8C970CCF13128F40007E01A5 /* camera_view_controller.h */,
-				8C970CD013128F40007E01A5 /* camera_view_controller.m */,
+				8C53A22A1314339F003E27AC /* lib */,
+				8C53A2291314337A003E27AC /* app */,
+				8C53A22813143367003E27AC /* view_controllers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -131,6 +133,33 @@
 				8C53A1E31313B891003E27AC /* 4.png */,
 			);
 			path = logo;
+			sourceTree = "<group>";
+		};
+		8C53A22813143367003E27AC /* view_controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8C970CCF13128F40007E01A5 /* camera_view_controller.h */,
+				8C970CD013128F40007E01A5 /* camera_view_controller.m */,
+			);
+			name = view_controllers;
+			sourceTree = "<group>";
+		};
+		8C53A2291314337A003E27AC /* app */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* app_delegate.h */,
+				1D3623250D0F684500981E51 /* app_delegate.m */,
+			);
+			name = app;
+			sourceTree = "<group>";
+		};
+		8C53A22A1314339F003E27AC /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				8C53A22B131433C8003E27AC /* glitch.h */,
+				8C53A22C131433C8003E27AC /* glitch.m */,
+			);
+			name = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +233,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* app_delegate.m in Sources */,
 				8C970CD213128F40007E01A5 /* camera_view_controller.m in Sources */,
+				8C53A22D131433C8003E27AC /* glitch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

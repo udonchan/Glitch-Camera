@@ -4,12 +4,13 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import "glitch.h"
 
 @interface camera_view_controller : UIViewController
 <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     BOOL _current_bars_visibility;
-    IBOutlet UIImageView*   _imageView;
-    IBOutlet UIImageView*   _logoView;
+    IBOutlet UIImageView*_imageView;
+    IBOutlet UIImageView*_logoView;
 }
 
 @property (nonatomic, retain) IBOutlet UIToolbar*toolbar;
