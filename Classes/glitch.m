@@ -27,4 +27,13 @@
     return [NSData dataWithBytes:b length:[d length]];
 }
 
++ (NSData*)data_drop_glitch:(NSData*)d withRatio:(float)rat {
+    Byte*b,*h;
+    h = b= (Byte*)malloc([d length]);
+    for (Byte*cur = (Byte*)[d bytes];cur!=(Byte*)[d bytes] + [d length];*cur++)
+        if (lrand48()%(int)(1/rat) != 0)
+            *b++=*cur;
+    return [NSData dataWithBytes:h length:[d length]];
+}
+
 @end

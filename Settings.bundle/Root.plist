@@ -69,11 +69,13 @@
 			<array>
 				<string>0</string>
 				<string>1</string>
+				<string>2</string>
 			</array>
 			<key>Titles</key>
 			<array>
 				<string>Simple Glith</string>
 				<string>Segmentation Glitch</string>
+				<string>DataDrop Glitch</string>
 			</array>
 		</dict>
 	</array>

@@ -50,9 +50,12 @@
 
 -(NSData*)glitch:(NSData*)d {
     switch ([[[NSUserDefaults standardUserDefaults]stringForKey:@"glitch type"]intValue]) {
-        case 1:
+        case _SEGMENT_GLITCH:
             return [glitch segment_glitch:d 
                                 withRatio:0.0001*[[[NSUserDefaults standardUserDefaults]stringForKey:@"glitch ratio"]floatValue]];
+        case _DATA_DROP_GLITCH:
+            return [glitch data_drop_glitch:d 
+                                withRatio:0.00008*[[[NSUserDefaults standardUserDefaults]stringForKey:@"glitch ratio"]floatValue]];
         default:
             return [glitch simple_glitch:d 
                                withRatio:0.0001*[[[NSUserDefaults standardUserDefaults]stringForKey:@"glitch ratio"]floatValue]];
