@@ -6,17 +6,16 @@
 #import "camera_view_controller.h"
 
 @implementation camera_view_controller
-@synthesize toolbar;
 
 - (void) visible_bars {
     [[UIApplication sharedApplication]setStatusBarHidden:NO];
-    [self.toolbar setAlpha:1.0];
+    [_toolbar setAlpha:1.0];
     _current_bars_visibility = YES;
 }
 
 - (void) hide_bars {
     [[UIApplication sharedApplication]setStatusBarHidden:YES];
-    [self.toolbar setAlpha:0.0];
+    [_toolbar setAlpha:0.0];
     _current_bars_visibility = NO;
 }
 
@@ -37,6 +36,35 @@
     CALayer *hitLayer = [[self.view layer] hitTest:[self.view convertPoint:location fromView:nil]];
     if (hitLayer == _imageView.layer && _imageView.image!=nil)
         [self change_bars_visibility];
+}
+
+- (void)image:(UIImage *)image 
+didFinishSavingWithError:(NSError *)error 
+  contextInfo: (void *) contextInfo {
+    for(id item in [_toolbar items]) 
+        [(UIBarItem*)item setEnabled:YES];
+    [_indicator stopAnimating];
+    if (error) {
+        UIAlertView *alertView = [[UIAlertView alloc] 
+                                  initWithTitle:@"Save Faild"
+                                  message:@"Some problems occurred. "
+                                  delegate:self
+                                  cancelButtonTitle:nil
+                                  otherButtonTitles:@"OK",nil];
+        [alertView show];
+        [alertView release];
+    }
+    
+}
+
+- (IBAction)save_image:(id)sender {
+    for(id item in [_toolbar items]) 
+        [(UIBarItem*)item setEnabled:NO];
+    [_indicator startAnimating];
+    UIImageWriteToSavedPhotosAlbum([UIImage imageWithData:UIImagePNGRepresentation(_imageView.image)], 
+                                   self,
+                                   @selector(image:didFinishSavingWithError:contextInfo:), 
+                                   nil);
 }
 
 - (IBAction)launch_camera:(id)sender {
@@ -71,6 +99,12 @@
       [self glitch:
        UIImageJPEGRepresentation([editingInfo objectForKey:UIImagePickerControllerOriginalImage],
                                  [[[NSUserDefaults standardUserDefaults]stringForKey:@"jpeg quality"]floatValue])]]];
+    /* PNG vertion
+    [_imageView setImage:
+     [UIImage imageWithData:
+      [self glitch:
+       UIImagePNGRepresentation([editingInfo objectForKey:UIImagePickerControllerOriginalImage])]]];
+     */
 }
     
 - (void)imagePickerControllerDidCancel:(UIImagePickerController*)picker {
@@ -91,7 +125,7 @@
     [_logoView startAnimating];
      */
     [_logoView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.png",arc4random()%4+1]]];
-
+    [_save_button setEnabled:_imageView.image!=nil];
     [super viewWillAppear:animated];
 }
 

@@ -20,7 +20,7 @@
     memcpy(b, [d bytes], [d length]); 
     for (int i = 0; i < [d length]*rat; ++i) {
         int f = lrand48()%[d length];
-        int l = lrand48()%24;
+        int l = lrand48()%24;  // max segmet length
         for (int j = 0; j < l && j+f < [d length]; ++j,++i)
             b[j+f] = (Byte)lrand48()%BYTE_SIZE;
     }
